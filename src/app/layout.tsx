@@ -16,7 +16,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "School Companion",
-  description: "A student dashboard",
+  description: "A modern student dashboard for schedules, Mashov, notes and school tools.",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+  ],
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

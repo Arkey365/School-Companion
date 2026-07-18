@@ -12,19 +12,25 @@ import { Calendar, BookOpen, FileText, Clock4 } from "lucide-react";
 export default function Home() {
   return (
     <div className="min-h-[70vh] flex flex-col gap-6">
-      <header className="flex items-center justify-between">
+      <header className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-zinc-950/80 p-5 shadow-sm sm:flex-row sm:items-end sm:justify-between sm:gap-6">
         <div>
-          <h2 className="text-2xl font-semibold">Welcome back</h2>
-          <p className="text-sm text-zinc-400">Here's your quick overview</p>
+          <h2 className="text-3xl font-semibold">Welcome back</h2>
+          <p className="mt-2 text-sm text-zinc-400">Here's your quick overview</p>
         </div>
-        <div className="hidden sm:flex gap-3">
-          <Link href="/schedule" className="rounded-full bg-zinc-800 px-4 py-2 text-sm font-medium hover:bg-zinc-700 flex items-center gap-2"><Calendar className="w-4 h-4" />Schedule</Link>
-          <Link href="/mashov" className="rounded-full bg-zinc-800 px-4 py-2 text-sm font-medium hover:bg-zinc-700 flex items-center gap-2"><BookOpen className="w-4 h-4" />Mashov</Link>
-          <Link href="/google-docs" className="rounded-full bg-zinc-800 px-4 py-2 text-sm font-medium hover:bg-zinc-700 flex items-center gap-2"><FileText className="w-4 h-4" />Google Docs</Link>
+        <div className="grid w-full grid-cols-1 gap-3 sm:w-auto sm:grid-flow-col sm:auto-cols-min">
+          <Link href="/schedule" className="inline-flex items-center justify-center rounded-full bg-zinc-800 px-4 py-3 text-sm font-medium hover:bg-zinc-700 gap-2">
+            <Calendar className="w-4 h-4" />Schedule
+          </Link>
+          <Link href="/mashov" className="inline-flex items-center justify-center rounded-full bg-zinc-800 px-4 py-3 text-sm font-medium hover:bg-zinc-700 gap-2">
+            <BookOpen className="w-4 h-4" />Mashov
+          </Link>
+          <Link href="/google-docs" className="inline-flex items-center justify-center rounded-full bg-zinc-800 px-4 py-3 text-sm font-medium hover:bg-zinc-700 gap-2">
+            <FileText className="w-4 h-4" />Google Docs
+          </Link>
         </div>
       </header>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
           <Card title="Current Time" icon={<Clock4 className="w-5 h-5" />}>
             <Greeting />

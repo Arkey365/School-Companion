@@ -27,7 +27,7 @@ export default function ActionButton({
   return (
     <Link
       href={href}
-      className={`inline-flex w-full items-center justify-center gap-2 rounded-3xl border px-5 py-4 text-sm font-semibold transition duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 active:scale-[0.98] active:opacity-95 ${buttonStyles[variant]} ${className}`}
+      className={`inline-flex w-full min-h-[3.5rem] items-center justify-center gap-3 rounded-3xl border px-5 py-4 text-sm font-semibold transition duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 active:scale-[0.98] active:opacity-95 ${buttonStyles[variant]} ${className}`}
       aria-label={label}
     >
       {icon}
