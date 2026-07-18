@@ -1,5 +1,10 @@
+"use client";
 import Link from "next/link";
-import Card from "@/components/ui/Card";
+import LiveClock from "@/components/dashboard/LiveClock";
+import DateCard from "@/components/dashboard/DateCard";
+import Greeting from "@/components/dashboard/Greeting";
+import CurrentLessonCard from "@/components/dashboard/CurrentLessonCard";
+import NextLessonCard from "@/components/dashboard/NextLessonCard";
 
 export default function Home() {
   return (
@@ -17,20 +22,20 @@ export default function Home() {
       </header>
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card className="flex flex-col gap-2">
-          <h3 className="text-sm text-zinc-400">Current Time</h3>
-          <div className="text-2xl font-semibold">--:--</div>
-        </Card>
+        <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
+          <div className="rounded-2xl bg-zinc-900/60 p-4">
+            <Greeting />
+            <div className="mt-4">
+              <LiveClock />
+            </div>
+          </div>
+          <DateCard />
+        </div>
 
-        <Card className="flex flex-col gap-2">
-          <h3 className="text-sm text-zinc-400">Current Lesson</h3>
-          <div className="text-lg font-medium">No lesson</div>
-        </Card>
-
-        <Card className="flex flex-col gap-2">
-          <h3 className="text-sm text-zinc-400">Next Lesson</h3>
-          <div className="text-lg font-medium">—</div>
-        </Card>
+        <div className="col-span-2 grid grid-cols-1 gap-4">
+          <CurrentLessonCard />
+          <NextLessonCard />
+        </div>
       </section>
 
       <section className="mt-4">
